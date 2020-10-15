@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -34,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: fade(theme.palette.common.white, 1),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
-        },
         marginRight: theme.spacing(15),
         marginLeft: 0,
         width: '100%',
@@ -72,10 +70,18 @@ const useStyles = makeStyles((theme) => ({
             width: '80ch',
         },
         color: "black"
+    },
+    userRoot: {
+        display: "flex",
+    },
+    userChild: {
+        position:"relative",
+        top:"2px",
+        paddingRight: "50px"
     }
 }));
 
-export default function PrimarySearchAppBar() {
+export default function NavBar() {
     const classes = useStyles();
     return (
         <div className={classes.grow}>
@@ -97,9 +103,12 @@ export default function PrimarySearchAppBar() {
                             <SearchIcon />
                         </div>
                     </div>
-                    <div>
-                        <ShoppingCartIcon />
-                        <span style={{ position: "relative", bottom: "5px", left: "5px", fontFamily: "Roboto sans-serif", fontSize: "16px", fontWeight:"bold" }}>Cart</span>
+                    <div className={classes.userRoot}>
+                        <AccountCircleIcon className={classes.userChild} />
+                        <span className={classes.userChild} >
+                            <ShoppingCartIcon />
+                            <span style={{ position: "relative", bottom: "5px", left: "5px", fontFamily: "Roboto sans-serif", fontSize: "16px", fontWeight: "bold" }}>Cart</span>
+                        </span>
                     </div>
                 </Toolbar>
             </AppBar>
