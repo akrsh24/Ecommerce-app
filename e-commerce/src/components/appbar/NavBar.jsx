@@ -7,6 +7,7 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { Badge } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -75,8 +76,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
     },
     userChild: {
-        position:"relative",
-        top:"2px",
+        position: "relative",
+        top: "2px",
         paddingRight: "50px"
     }
 }));
@@ -106,8 +107,10 @@ export default function NavBar() {
                     <div className={classes.userRoot}>
                         <AccountCircleIcon className={classes.userChild} />
                         <span className={classes.userChild} >
-                            <ShoppingCartIcon />
-                            <span style={{ position: "relative", bottom: "5px", left: "5px", fontFamily: "Roboto sans-serif", fontSize: "16px", fontWeight: "bold" }}>Cart</span>
+                            <Badge badgeContent={4} color="secondary">
+                                <ShoppingCartIcon />
+                            </Badge>
+                            <span style={{ position: "relative", top: "5px", left: "10px", fontFamily: "Roboto sans-serif", fontSize: "16px", fontWeight: "bold" }}>Cart</span>
                         </span>
                     </div>
                 </Toolbar>

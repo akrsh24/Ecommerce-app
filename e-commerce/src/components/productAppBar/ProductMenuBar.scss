@@ -1,0 +1,61 @@
+@import "../../util/variables";
+
+.root {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+    & * {
+        height: 48px;
+    }
+}
+
+.paperBar {
+    width: 100%;
+    position: relative;
+}
+
+@media screen and (min-width: $xs-min-width) and (max-width: $xs-max-width) {
+}
+
+@media screen and (min-width: $sm-min-width) and (max-width: $sm-max-width) {
+}
+
+@media screen and (min-width: $md-min-width) and (max-width: $md-max-width) {
+}
+
+@media screen and (min-width: $lg-min-width) and (max-width: $lg-max-width) {
+}
+@media screen and (min-width: $xl-min-width) and (max-width: $xl-max-width) {
+}
+
+@media screen and (min-width: $xxl-min-width) {
+    .productBar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        height: 100%;
+
+        position: absolute;
+        left: 2%;
+        right: 2%;
+    }
+
+    .productList {
+        flex-grow: 1;
+        font-family: "Roboto; Arial sans-serif";
+        cursor: pointer;
+        font-weight: bold;
+        height: 100%;
+        & .productList-text {
+            margin-bottom: 0;
+        }
+    }
+
+    .productList:hover {
+        background-color: red;
+    }
+}
