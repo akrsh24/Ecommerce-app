@@ -7,9 +7,22 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { Badge } from '@material-ui/core';
+import { Badge, createMuiTheme } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const theme = createMuiTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 322,
+            md: 427,
+            lg: 770,
+            xl: 1026,
+            xxl: 1442
+        },
+    },
+});
+
+const useStyles = makeStyles(() => ({
     grow: {
         display: "flex",
         flexGrow: 1,
@@ -17,20 +30,21 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         background: "#2874f0",
         height: "56px",
+        width: "100vw"
     },
     toolbar: {
         [theme.breakpoints.up('md')]: {
             position: "absolute",
-            left: "150px",
+            left: "10%",
             minHeight: "51px",
-            margin: "0px 10px 0px 10px", // TRBL
+            width: "50%"
         }
     },
     title: {
-        display: 'none',
-        [theme.breakpoints.up('md')]: {
-            display: 'block',
-        },
+        // display: 'none',
+        // [theme.breakpoints.up('md')]: {
+        //     display: 'block',
+        // },
     },
     search: {
         position: 'relative',
@@ -40,8 +54,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 0,
         width: '100%',
         [theme.breakpoints.up('md')]: {
-            marginLeft: theme.spacing(3),
-            width: 'auto',
+            marginLeft: theme.spacing(2),
         },
     },
     searchIcon: {
@@ -58,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
     },
     inputRoot: {
         color: 'inherit',
+        width: 'inherit'
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
@@ -68,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Arial",
         width: '100%',
         [theme.breakpoints.up('md')]: {
-            width: '80ch',
+            width: '100%',
         },
         color: "black"
     },
@@ -77,8 +91,8 @@ const useStyles = makeStyles((theme) => ({
     },
     userChild: {
         position: "relative",
-        top: "2px",
-        paddingRight: "50px"
+        top: "2%",
+        paddingRight: "50%"
     }
 }));
 
@@ -88,12 +102,12 @@ export default function NavBar() {
         <div className={classes.grow}>
             <AppBar position="static" className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography className={classes.title} variant="h6" >
                         ShopKart
                     </Typography>
                     <div className={classes.search}>
                         <InputBase
-                            placeholder="Search for products, brands and more"
+                            placeholder="Search"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
@@ -106,12 +120,12 @@ export default function NavBar() {
                     </div>
                     <div className={classes.userRoot}>
                         <AccountCircleIcon className={classes.userChild} />
-                        <span className={classes.userChild} >
+                        <div className={classes.userChild} >
                             <Badge badgeContent={4} color="secondary">
                                 <ShoppingCartIcon />
                             </Badge>
-                            <span style={{ position: "relative", top: "5px", left: "10px", fontFamily: "Roboto sans-serif", fontSize: "16px", fontWeight: "bold" }}>Cart</span>
-                        </span>
+                            <span style={{ position: "absolute", top: "5px", left: "50%", fontFamily: "Roboto sans-serif", fontSize: "16px", fontWeight: "bold" }}>Cart</span>
+                        </div>
                     </div>
                 </Toolbar>
             </AppBar>
