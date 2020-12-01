@@ -1,0 +1,9 @@
+.navigator {
+    color: white;
+    transition: transform .2s;
+}
+
+.navigator:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}

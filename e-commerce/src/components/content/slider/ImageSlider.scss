@@ -2,12 +2,14 @@
 
 .image-slider-container {
     width: 100vw;
-    height: 20rem;
+    height: 20em;
+
+    position: relative;
 }
 
-.image-slider-item{
-    height: inherit;
-    object-fit: contain;
+.image-slider-item {
+    height: 100%;
+    width: 100%;
 }
 
 @media screen and (min-width: $xs-min-width) and (max-width: $xs-max-width) {
