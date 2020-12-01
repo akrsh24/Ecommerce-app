@@ -1,5 +1,10 @@
 @import "../../util/variables";
 
+.content-container {
+    margin: 0 10% 0 10%; //TRBL
+    width: calc(100vw - 20%);
+}
+
 @media screen and (min-width: $xs-min-width) and (max-width: $xs-max-width) {
 }
 

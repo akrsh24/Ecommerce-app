@@ -4,12 +4,7 @@ import "./Navigator.scss";
 
 const PreviousPage = (props) => {
     return (
-        <div style={{
-            position: "absolute",
-            top: "50%",
-            left: "0%",
-            transform: "translate(50%,-50%)"
-        }}>
+        <div className="previous-navigator-div">
             <NavigateBeforeIcon
                 fontSize="large"
                 onClick={props.handlePrevious}
