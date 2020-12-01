@@ -1,12 +1,14 @@
 @import "../../util/variables";
 
-.root {
+.paperBar-root {
     display: flex;
     flex-grow: 1;
     justify-content: flex-start;
     & * {
         height: 48px;
     }
+
+    position: relative;
 }
 
 .paperBar {
