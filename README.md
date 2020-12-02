@@ -1,2 +1,2 @@
 # Ecommerce-app
-A Flipkart UI clone using React-Redux, Material UI framework. 
+An e-commerce UI clone using React-Redux, Material UI framework. 
