@@ -6,10 +6,10 @@ import ProductSubList from './ProductSubList';
 
 export default function ProductMenuBar() {
     const [showProductSubList, setShowProductSubList] = useState(false);
-    const [currentProductSectionKey, setCurrentProductSectionKey] = useState("");
+    const [currentProductSectionOptions, setCurrentProductSectionOptions] = useState([]);
 
     const setCurrentSectionContext = (key, flag) => {
-        setCurrentProductSectionKey(key);
+        setCurrentProductSectionOptions(key);
         setShowProductSubList(flag);
     }
 
@@ -18,9 +18,9 @@ export default function ProductMenuBar() {
             return (
                 <div className="productList">
                     <p className="productList-text"
-                        // onClick={() => setShowProductSubList(true)}
-                        onMouseOver={() => setCurrentSectionContext(productList.key, true)}
-                        onMouseLeave={() => setCurrentSectionContext(productList.key, false)}
+                        // onClick={() => setCurrentSectionContext(productList.options, true)}
+                    onMouseOver={() => setCurrentSectionContext(productList.options, true)}
+                    onMouseLeave={() => setCurrentSectionContext(productList.options, false)}
                     >{productList.key}</p>
                 </div>
             )
@@ -36,7 +36,7 @@ export default function ProductMenuBar() {
             </Paper>
             {
                 showProductSubList &&
-                <ProductSubList sectionKey={currentProductSectionKey} />
+                <ProductSubList options={currentProductSectionOptions} />
             }
         </div>
     );
