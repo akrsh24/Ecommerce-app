@@ -4,5 +4,13 @@
     left: 5%;
     right: 10%;
     z-index: 2;
+}
 
+.product-sublist-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    height: inherit;
 }
